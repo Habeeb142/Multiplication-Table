@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiplication Table Generator</title>
+	<script>
+
+		function generator()
+		{
+			var pp = "";
+			var result = 0;
+			b=block.value;
+			l = line.value;
+			s=startpoint.value;
+
+			pp += "<table border=4 valign='top'><tr>"
+			for(i=s;i<=b;i++)
+			{
+				pp += "<td>";
+				pp += i+" Times";
+				pp += "<table border=3>";
+				for(v=1;v<=l;v++)
+				{
+					result = i * v;
+					pp +="<tr><td>" + i + " X "+ v +" = "+ result+ "</td></tr>";
+				}
+				pp += "</table></td>";
+			}
+
+			pp += "</tr></table>";
+			place.innerHTML = pp;
+		}
+
+	</script>
+</head>
+<body>
+<center><fieldset><legend>Multiplication Table Generator</legend>
+<table><tr><td>No of Blocks</td><td><input type="text" id="block" name=""></td></tr>
+	<tr><td>No of Lines</td><td><input type="text" id="line" name=""></td></tr>
+	<tr><td>Start From</td><td><input type="text" id="startpoint" name=""></td></tr>
+	<tr align="center"><td align="center" colspan="2"><button onclick="generator()">Generate</button></td></tr>
+</table>
+</fieldset>
+</center>
+<div id="place"></div>
+</body>
+</html>

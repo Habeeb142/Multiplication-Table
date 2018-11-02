@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiplication Table</title>
+	<script type="text/javascript">
+		function generate()
+		{	
+			var result=0;
+			var collect="";
+			collect+="<table border=1><tr>";
+			for (i=1; i<=noOfBlocks.value; i++)
+			{
+				collect += "<td>"+i+" Times<table border=0>";
+				
+				for(v=1; v<=noOfLines.value; v++)
+				{
+					result=i*v;
+					collect+="<tr><td>" + i + "&times" + v + "=" +result+"</td></tr>";
+				}
+				collect+="</table></td>";
+			
+			}
+			collect+="</tr></table>";
+			display.innerHTML=collect;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<fieldset>
+			<legend>Multiplication Table</legend>
+			<div><label>No Of Blocks:</label><input type="text" name="" id="noOfBlocks"></div><br />
+			<div><label>No Of Lines:</label><input type="text" name="" id="noOfLines"></div><br />
+			<button onclick ="generate()">Generate</button>
+		</fieldset>
+	</center>
+	<div id="display"></div>
+</body>
+</html>
